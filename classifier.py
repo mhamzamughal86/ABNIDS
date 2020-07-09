@@ -22,9 +22,7 @@ class DecisionTree():
         packet_list.append([packet[x] for x in self.selected_attributes])
         result  = self.tree_classifier.predict(packet_list)
         result = int(result[0])
-        
-        # nature = packet[18].split('\\')  # New Line error elimination (e.g '0\n')
-        # nature = int(nature[0])
+      
         packet_list.clear()
         return self.__classification(result)
     def __classification(self, status):

@@ -25,15 +25,7 @@ class Population():
         self.individual = self.individual[0:self.population_size:1] #cut the extra individual with less fitness
         self.max_fitest = self.individual[0].chromosome
         self.max_fitness = self.individual[0].fitness
-        #Check point extra
-        # print(f"MAX FITNESS = {self.max_fitness}")
-        # print("Chromosome with Fitness")
-        # for x in range(len(self.individual)):
-        #     chromo = self.individual[x].chromosome
-        #     fitness = self.individual[x].fitness
-        #     print(f"{chromo} = {fitness}")
-    
-    #Return fitness for sorting
+        
     def __get_fitness(self,ind):
         return ind.fitness
     

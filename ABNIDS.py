@@ -8,7 +8,6 @@ import pyshark
 import matplotlib.pyplot as plt 
 import threading
 import packet as p
-from GaPram import Ui_Dialog
 import GAAlgorithm
 import Preprocess as data
 import classifier
@@ -130,15 +129,12 @@ class Ui_MainWindow(object):
                         self.insert_data(attr_list,result,result_type,row)
                         print(f"{result} = {result_type} = {row}")
                         row+=1 
-                        # print(attr_list)
                     elif "<TCP Layer>" in str(packet.layers) and "<IP Layer>" in str(packet.layers):
                         attr_list = self.packet.tcp_packet_attributes(packet)
                         result, result_type = self.tree_classifier.test_dataset(attr_list)
                         self.insert_data(attr_list,result,result_type,row)
                         print(f"{result} = {result_type} = {row}")
                         row+=1    
-                        # print(attr_list)
-                    # print("===========================================")
                     if (time.time()-t1) > 5 and not self.isStop:  # 5Seconds
                         print("Updateing List")
                         self.packet.initiating_packets()
